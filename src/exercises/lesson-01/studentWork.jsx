@@ -3,10 +3,23 @@
 
 export default function StudentWork() {
   //add variables here
+  const name = 'Rodrigo';
+  const age = 24;
+  var hobbies = ['Soccer, Basketball, VideoGames, Coding'];
   return (
     <div>
       {/* add JSX here */}
-      <p> Student output will go here </p>
+      <h1>My name is {name}</h1>
+      <p>
+        {' '}
+        Hello I am {name} I am {age} years old and here are some of the hobbies
+        I like to do.
+      </p>
+      <ul>
+        {hobbies.map((fruit, index) => (
+          <li key={index}>{hobbies}</li>
+        ))}
+      </ul>
     </div>
   );
 }
