@@ -13,7 +13,7 @@ export default function StudentWork() {
       <p>
         {' '}
         Hello I am {name} I am {age} years old and here are some of the hobbies
-        I like to do.
+        I like to do in my free time.
       </p>
       <ul>
         {hobbies.map((fruit, index) => (
