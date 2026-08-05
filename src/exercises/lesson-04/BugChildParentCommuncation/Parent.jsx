@@ -12,7 +12,13 @@ export default function Parent() {
     <div>
       <h2>Parent-Child Communication</h2>
       <p>Counter: {count}</p>
-      <Child />
+      <Child onIncrement={increment} />
     </div>
   );
 }
+
+/**
+  As for the parent we needed to allow the child to talk bakc to it 
+  and in order to do that we passed down the funtion using the OnIncremnt={increment}
+
+**/
