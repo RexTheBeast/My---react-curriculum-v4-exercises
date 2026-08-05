@@ -1,5 +1,7 @@
 // src/exercises/lesson-03/BugProps.jsx
 
+import { useState } from 'react';
+
 /*
   BUG #3 — Props Not Updating
 
@@ -13,10 +15,10 @@
 */
 
 export default function BugProps({ name = 'friend' }) {
-  let message = 'Hello, ' + name;
+  const [message, setMessage] = useState('Hello, ' + name);
 
   function handleChange() {
-    message = 'Hi, ' + name + '!';
+    setMessage('Hi, ' + name + '!');
   }
 
   return (
@@ -28,4 +30,6 @@ export default function BugProps({ name = 'friend' }) {
 }
 
 // Explanation:
-// (Write your explanation here)
+// (React does not track normal varibles wihc message was originally. React only
+//  tracks states and by converting the message into a state we can now use the setter
+//  setMessage to change/update the UI)
