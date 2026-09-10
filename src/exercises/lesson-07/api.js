@@ -29,7 +29,14 @@ export function getPosts() {
   // and return some JSON data.
   // You may delete this comment once you've finished the implementation.
   // eslint-disable-next-line no-unused-vars
-  const url = POSTS_ENDPOINT;
+  const url = `${POSTS_ENDPOINT}?_limit=10`;
+
+  return fetch(url).then((response) => {
+    if (!response.ok) {
+      throw new Error('Failed to fetch posts');
+    }
+    return response.json();
+  });
 }
 
 /**
@@ -51,4 +58,11 @@ export function getSinglePost(postId) {
   // You may delete this comment once you've finished the implementation.
   // eslint-disable-next-line no-unused-vars
   const url = `${POSTS_ENDPOINT}${postId}`;
+
+  return fetch(url).then((response) => {
+    if (!response.ok) {
+      throw new Error('Failed to fetch post');
+    }
+    return response.json();
+  });
 }
